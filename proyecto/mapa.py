@@ -19,9 +19,9 @@ class mapa:
     def generar(self):
         cantidad_habitaciones = 6
         
-        for in range(cantidad_habitaciones):
+    """  for in range(cantidad_habitaciones):
             w = random.randint(4, 7)
             h = random.randint(4, 7)
             x = random.randint()
             y = random.randint()
-            
+         """   
