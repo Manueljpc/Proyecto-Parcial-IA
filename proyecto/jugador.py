@@ -1,5 +1,6 @@
 import pygame
 
+#la clase jugador con sus atributos
 class jugador:
     def __init__(self,x,y):
         self.x = x
@@ -8,6 +9,8 @@ class jugador:
         self.velocidad = 4
         self.vida = 100
         self.color = (0, 0, 100)
+        
+        #movimientos del jugador
         
     def movimiento(self,keys):
         if keys[pygame.K_w]:
@@ -19,5 +22,6 @@ class jugador:
         if keys[pygame.K_d]:
             self.x += self.velocidad
                 
+    # esto es para mostrar al jugador cuando sea llamado            
     def draw(self,screen):
         pygame.draw.rect(screen,self.color,(self.x,self.y,self.tamaño,self.tamaño))             
