@@ -1,5 +1,5 @@
 import pygame
-
+import os
 #la clase jugador con sus atributos
 class jugador:
     def __init__(self,x,y):
@@ -9,6 +9,12 @@ class jugador:
         self.velocidad = 4
         self.vida = 100
         self.color = (0, 0, 100)
+        #sprites
+        
+        ruta = os.path.join("assets","imagenes","sprite","player.png")
+        self.sprite = pygame.image.load(ruta).convert_alpha()
+        self.sprite = pygame.transform.scale(self.sprite,(self.tamaño,self.tamaño))
+        
         
         #movimientos del jugador
         
@@ -24,4 +30,4 @@ class jugador:
                 
     # esto es para mostrar al jugador cuando sea llamado            
     def draw(self,screen):
-        pygame.draw.rect(screen,self.color,(self.x,self.y,self.tamaño,self.tamaño))             
+        pygame.blit(self.sprite,( self.x,self.y ))             
