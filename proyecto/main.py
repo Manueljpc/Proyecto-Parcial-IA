@@ -17,10 +17,10 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
+#mover al jugador
     keys = pygame.key.get_pressed()
     jugador.movimiento(keys)
-    
+#darle color al fondo
     screen.fill((0, 0, 255))
     jugador.draw(screen)
     enemigo.draw(screen)

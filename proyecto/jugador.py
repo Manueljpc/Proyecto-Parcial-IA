@@ -9,9 +9,10 @@ class jugador:
         self.velocidad = 4
         self.vida = 100
         self.color = (0, 0, 100)
+        
         #sprites
         
-        ruta = os.path.join("assets","imagenes","sprite","player.png")
+        ruta = os.path.join("assets","imagenes","sprites","player.png")
         self.sprite = pygame.image.load(ruta).convert_alpha()
         self.sprite = pygame.transform.scale(self.sprite,(self.tamaño,self.tamaño))
         
