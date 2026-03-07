@@ -21,13 +21,14 @@ while running:
     keys = pygame.key.get_pressed()
     jugador.movimiento(keys)
 #darle color al fondo
-    screen.fill((0, 0, 255))
+    screen.fill((200, 200, 200))
+
     jugador.draw(screen)
     enemigo.draw(screen)
-
+    
     
     pygame.display.flip()
 
-    clock.tick(60)  
-
+    clock.tick(60) 
+     
 pygame.quit()
