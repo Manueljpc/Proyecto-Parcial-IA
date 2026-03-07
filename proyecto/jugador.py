@@ -9,6 +9,7 @@ class jugador:
         self.velocidad = 4
         self.vida = 100
         self.color = (0, 0, 100)
+        self.escondido = False # esto es para cuando ponga el sistema de sigilo, si es que lo pongo
         
         #movimientos del jugador
         
