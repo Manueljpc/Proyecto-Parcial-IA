@@ -52,6 +52,11 @@ class jugador:
     def draw(self,screen):
         color_final = (0,50,100)  
         
-        if self.escondido: else self.color
+        if self.escondido: 
+            color_final = (0,50,100) 
+            
+        else:
+        
+            color_final = self.color
         
         pygame.draw.rect(screen, color_final,( self.x,self.y, self.tamaño, self.tamaño ))             

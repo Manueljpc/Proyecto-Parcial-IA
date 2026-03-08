@@ -37,10 +37,22 @@ class mapa:
                 pygame.draw.rect(screen,(20,20,20),rect)        
                 pygame.draw.rect()     
                 
-    
+    # una lista de cuadrados para poder procesar las colisiones 
     def obtener_paredes(self):
         paredes = []
         for fila in range(self.alto):
             for col in range(self.ancho):
                 if self.matriz[fila][col] == 1:
                     paredes.append(pygame.rect(col*self.tile, fila*self.tile, self.tile, self.tile, self.tile ))               
+    
+        return paredes
+    # lo mismo que lo de arriba pero para escondites
+    def obtener_escondites(self):
+        escondite = []
+        for fila in range(self.alto):
+            for col in range(self.ancho):
+                if self.matriz[fila][col] == 1:
+                    escondite.append(pygame.rect(col*self.tile, fila*self.tile, self.tile, self.tile, self.tile ))                
+    
+    
+        return escondite                
