@@ -1,10 +1,4 @@
 import pygame
-import random
-
-
-ancho_mapa = 25 # 25 por 32 es igual a 800  
-alto_mapa = 18 # 18 por 32 es igual a 576
-tile = 32
 
 
 class mapa:
@@ -12,16 +6,41 @@ class mapa:
         
         #aqui 1 es igual a un muro y 0 es igual a suelo
         
-        self.matriz = [[1 for _ in range(ancho_mapa)] for _ in range(alto_mapa)]
-        self.obstaculos = []
-        self.generar 
+        self.tile = 32 # el tamaño de las celdas en pixeles
+        self.matriz = [
+            # el 1 representan paredes el 2 esondites y el 0 piso, por donde se puede transitar
+        [1,1,1,1,1,1,1,1],
+        [1,0,2,0,0,0,0,1],
+        [1,0,0,0,2,0,0,1],
+        [1,1,1,1,1,1,1,1]
+            
+            
+               
+        ]
         
-    def generar(self):
-        cantidad_habitaciones = 6
+        self.ancho = len(self.matriz[0])# lo que hace es calcular el ancho basado en la lista
+        self.alto = len(self.matriz) # lo mismo pero para lo alto
         
-    """  for in range(cantidad_habitaciones):
-            w = random.randint(4, 7)
-            h = random.randint(4, 7)
-            x = random.randint()
-            y = random.randint()
-         """   
+        
+    def draw (self,screen):
+        
+        for fila in range(self.alto):
+            for col in range(self.ancho):
+                rect = pygame.Rect(col * self.tile, fila * self.tile, self.tile, self.tile) 
+        
+        
+            if self.matriz[fila][col] == 1:
+                pygame.draw.rect(screen, (50, 50, 50), rect)
+            elif self.matriz[fila][col] == 2:
+                pygame.draw.rect(screen, (0, 80, 0), rect)
+            else:
+                pygame.draw.rect(screen,(20,20,20),rect)        
+                pygame.draw.rect()     
+                
+    
+    def obtener_paredes(self):
+        paredes = []
+        for fila in range(self.alto):
+            for col in range(self.ancho):
+                if self.matriz[fila][col] == 1:
+                    paredes.append(pygame.rect(col*self.tile, fila*self.tile, self.tile, self.tile, self.tile ))               
