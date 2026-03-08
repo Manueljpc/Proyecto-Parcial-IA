@@ -1,9 +1,9 @@
 
 import pygame
 import sys
-from jugador import jugador
+from Jugador import jugador
 from enemigo import enemigo
-from mapa import mapa
+from Mapa import mapa
 
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
@@ -11,10 +11,10 @@ pygame.display.set_caption("furtivité dans l'ombre")
 clock = pygame.time.Clock()
 
 
-mi_mapa = mapa ()
+mi_mapa = mapa()
 
 
-personaje = jugador(100,100)
+personaje = jugador (100,100)
 
 
 running = True
@@ -31,9 +31,9 @@ while running:
     
     paredes_del_mapa = mi_mapa.obtener_paredes()
     
-    escondites_de_mapa = mi_mapa.obtener_escondites()
+    escondites_del_mapa = mi_mapa.obtener_escondites()
     
-    personaje.movimiento(keys, paredes_del_mapa, escondites_de_mapa )
+    personaje.movimiento(keys, paredes_del_mapa, escondites_del_mapa )
     
 #darle color al fondo
     screen.fill((200, 200, 200))
